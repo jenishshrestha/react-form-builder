@@ -6,6 +6,9 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import "./globals.css";
 
+// context wrapper
+import { AppContextWrapper } from "@/context/AppContextProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,13 +30,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col xl:h-screen overflow-hidden">
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex flex-grow xl:overflow-auto">
+            <AppContextWrapper>{children}</AppContextWrapper>
+          </main>
           <Footer />
         </div>
       </body>
