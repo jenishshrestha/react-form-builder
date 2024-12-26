@@ -54,13 +54,13 @@ export const defaultFieldConfig: Record<
 
 /**
  * ============================================
- * Additional Imports for each fields
+ * Additional imports required for some fields
  * ============================================
  */
 
-export const fieldImports: { [key: string]: string[] } = {
+export const fieldImports: Record<string, string[]> = {
   Combobox: [
-    'import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command"',
+    'import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"',
     'import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"',
     'import { Check, ChevronsUpDown } from "lucide-react"',
   ],
@@ -70,10 +70,10 @@ export const fieldImports: { [key: string]: string[] } = {
     'import { Calendar } from "@/components/ui/calendar"',
     'import { Calendar as CalendarIcon } from "lucide-react"',
   ],
-  "Input OTP": [
-    'import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"',
-  ],
   Select: [
     'import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"',
+  ],
+  "Input OTP": [
+    'import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"',
   ],
 };
